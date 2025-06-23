@@ -1,0 +1,12 @@
+# give player the combat tag
+execute as @a[tag=emperor] run tag @s add stopping_combat_s
+execute as @a[tag=emperor] run tag @s remove walking_combat_s
+
+execute as @e[tag=emperor] run say stopping combat_s!
+
+# play combat animation
+
+execute as @e[tag=aj.boss.root] run function animated_java:boss/animations/attack_s/stop
+
+# stop motion
+execute as @e[type=armor_stand,tag=base] run function boss:motion/stop_motion
